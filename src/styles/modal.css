@@ -1,0 +1,389 @@
+/* Модальные окна и формы (заявка на курс, запрос проекта). Классы общие для CourseModal и ProjectsView */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(3 4 8 / 0.78);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.modal-content {
+  width: min(520px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #131622, #0d0f17);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: 0 40px 100px -20px rgb(0 0 0 / 0.9), 0 0 80px -30px var(--brand-glow);
+  color: var(--text);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 0;
+}
+.modal-title {
+  margin: 0;
+  font-family: gilroyB, Exo, sans-serif;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.close-button,
+.close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: rgb(255 255 255 / 0.04);
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+.close-button:focus-visible,
+.close-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+@media (hover: hover) {
+  .close-button:hover,
+  .close-btn:hover {
+    background: rgb(255 255 255 / 0.1);
+    color: var(--text);
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px 28px 28px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.form-input,
+.form-textarea,
+.custom-select {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--control-border);
+  background: rgb(255 255 255 / 0.04);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  transition-property: border-color, background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.form-input::placeholder,
+.form-textarea::placeholder,
+.custom-select .placeholder {
+  color: #8d95a8;
+}
+.form-input:focus,
+.form-textarea:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-color: var(--brand);
+  background: rgb(var(--brand-rgb) / 0.06);
+}
+.custom-select-wrapper {
+  position: relative;
+}
+button.custom-select {
+  text-align: start;
+}
+.custom-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+}
+.custom-select.open {
+  border-color: var(--brand);
+}
+.select-display {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-arrow {
+  display: flex;
+  color: var(--text-muted);
+  transition-property: transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+.select-arrow.rotated {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: #161a27;
+  box-shadow: 0 24px 50px -12px rgb(0 0 0 / 0.8);
+  overflow: hidden;
+}
+.dropdown-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 6px;
+}
+button.dropdown-item {
+  width: 100%;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+}
+.option-name,
+.option-description,
+.course-name {
+  display: block;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .dropdown-item:hover {
+    background: rgb(var(--brand-rgb) / 0.12);
+  }
+}
+.option-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgb(var(--brand-rgb) / 0.12);
+  color: var(--brand-soft);
+}
+.option-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.option-content {
+  min-width: 0;
+}
+.option-name,
+.course-name {
+  font-weight: 600;
+  color: var(--text);
+}
+.option-description {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.dropdown-item .course-name {
+  flex: 1;
+}
+.course-price {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--success);
+  white-space: nowrap;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+.cancel-button,
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition-property: transform, background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+.cancel-button {
+  background: rgb(255 255 255 / 0.04);
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+.submit-button {
+  background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+  color: #0b0b0f;
+  box-shadow: 0 8px 28px -8px var(--brand-glow);
+}
+.cancel-button:active,
+.submit-button:enabled:active {
+  transform: scale(0.96);
+}
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.cancel-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+@media (hover: hover) {
+  .cancel-button:hover {
+    background: rgb(255 255 255 / 0.09);
+  }
+  .submit-button:enabled:hover {
+    box-shadow: 0 12px 36px -6px var(--brand-glow);
+  }
+}
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgb(0 0 0 / 0.3);
+  border-top-color: #0b0b0f;
+}
+
+/* ---------- Переходы: вход 300ms, выход короче и меньше (150ms) ---------- */
+.modal-enter-active,
+.modal-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+}
+.modal-enter-active {
+  transition-duration: 300ms;
+}
+.modal-leave-active {
+  transition-duration: 150ms;
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition-property: opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .modal-content-enter-active,
+  .project-modal-enter-active,
+  .modal-content-leave-active,
+  .project-modal-leave-active {
+    transition-property: opacity, transform, filter;
+    transition-timing-function: ease-out;
+  }
+  .modal-content-enter-active,
+  .project-modal-enter-active {
+    transition-duration: 300ms;
+  }
+  .modal-content-leave-active,
+  .project-modal-leave-active {
+    transition-duration: 150ms;
+  }
+  .modal-content-enter-from,
+  .project-modal-enter-from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(12px);
+  }
+  .modal-content-leave-to,
+  .project-modal-leave-to {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-12px);
+  }
+  .dropdown-enter-active,
+  .dropdown-leave-active {
+    transition-property: opacity, transform;
+  }
+  .dropdown-enter-from,
+  .dropdown-leave-to {
+    transform: translateY(-6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal-content-enter-active,
+  .project-modal-enter-active,
+  .modal-content-leave-active,
+  .project-modal-leave-active {
+    transition: opacity 150ms ease-out;
+  }
+  .modal-content-enter-from,
+  .modal-content-leave-to,
+  .project-modal-enter-from,
+  .project-modal-leave-to {
+    opacity: 0;
+  }
+}
+
+/* iOS не зумит поля, если шрифт не меньше 16px */
+@media (max-width: 640px) {
+  .form-input,
+  .form-textarea,
+  .custom-select {
+    font-size: 1rem;
+  }
+  .modal-header {
+    padding: 20px 20px 0;
+  }
+  .modal-form {
+    padding: 20px;
+  }
+}

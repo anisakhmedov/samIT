@@ -1,0 +1,737 @@
+{
+  "nav": {
+    "brand": "SAM IT Global",
+    "tagline": "Innovation & Development",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "school": "Education School",
+    "projects": "Projects",
+    "aiSchool": "AI School",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Creating the future",
+    "subtitle": "Where you learn not just to code — but to build the technologies of the future.",
+    "outsourcing": "Outsourcing services",
+    "education": "Education School",
+    "ai_school": "AI School",
+    "description": "Full range of IT services: from web application development to training in modern technologies. Innovative solutions for your business.",
+    "cta": {
+      "projects": "Our projects",
+      "contact": "Contact us"
+    },
+    "stats": {
+      "projects": "Projects",
+      "clients": "Clients",
+      "students": "Students",
+      "years": "Years experience"
+    }
+  },
+  "about": {
+    "title": "About",
+    "description": "We are a team of experienced developers and teachers who create innovative IT solutions and train the next generation of specialists.",
+    "mission": {
+      "title": "Our mission",
+      "description": "To create cutting-edge technological solutions and develop IT education in Uzbekistan. We strive to be a bridge between modern technologies and the local market."
+    },
+    "achievements": {
+      "projects": {
+        "title": "Successful projects",
+        "description": "Completed in 5 years"
+      },
+      "clients": {
+        "title": "Happy clients",
+        "description": "Long-term cooperation"
+      },
+      "students": {
+        "title": "Trained students",
+        "description": "Got IT profession"
+      }
+    },
+    "timeline": {
+      "title": "Company development history",
+      "items": {
+        "founding": {
+          "title": "Company founding",
+          "description": "Beginning of the journey in IT development"
+        },
+        "first_projects": {
+          "title": "First major projects",
+          "description": "Launch of web platforms for business"
+        },
+        "school_launch": {
+          "title": "IT school opening",
+          "description": "Start of educational programs"
+        },
+        "expansion": {
+          "title": "Team expansion",
+          "description": "Increasing the number of specialists"
+        },
+        "innovation": {
+          "title": "AI and innovations",
+          "description": "AI implementation in projects"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Our",
+    "subtitle": "services",
+    "description": "We provide a full range of modern IT solutions for your business development",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "description": "Creating modern web applications using the latest technologies"
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Development of native and cross-platform mobile applications"
+      },
+      "ai": {
+        "title": "AI/ML Solutions",
+        "description": "Integration of artificial intelligence and machine learning into your business"
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Creating intuitive and beautiful user interfaces"
+      },
+      "cloud": {
+        "title": "DevOps/Cloud",
+        "description": "Infrastructure setup and cloud solutions for your project"
+      },
+      "consulting": {
+        "title": "IT Consulting",
+        "description": "Consulting on technology selection and solution architecture"
+      }
+    }
+  },
+  "team": {
+    "title": "Our",
+    "subtitle": "team",
+    "description": "Professional developers and teachers with years of experience",
+    "members": {
+      "ceo": {
+        "position": "Founder & CEO",
+        "description": "10+ years in IT, development strategy expert"
+      },
+      "cto": {
+        "position": "Chief Technology Officer",
+        "description": "Solution architect, AI/ML specialist"
+      },
+      "lead_dev": {
+        "position": "Lead Developer",
+        "description": "Full-stack developer, student mentor"
+      },
+      "ui_designer": {
+        "position": "UI/UX Designer",
+        "description": "Creates beautiful and functional interfaces"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "us",
+    "description": "Ready to discuss your project or training questions",
+    "info": {
+      "location": {
+        "title": "Address"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "phone": {
+        "title": "Phone"
+      }
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent.",
+      "error": "Couldn't send your message. Check your connection and try again."
+    }
+  },
+  "footer": {
+    "description": "Education and outsourcing company: web, mobile and AI products, and IT courses.",
+    "quick_links": "Quick links",
+    "services": "Services",
+    "contact_info": "Contact info",
+    "city": "Samarkand",
+    "newsletter_title": "Stay updated",
+    "newsletter_text": "Get news and offers by email",
+    "email_placeholder": "name{'@'}example.com",
+    "subscribe": "Subscribe",
+    "subscribed": "Thanks for subscribing.",
+    "links": {
+      "home": "Home",
+      "projects": "Projects",
+      "courses": "Courses",
+      "ai": "AI School",
+      "contact": "Contact"
+    },
+    "items": {
+      "web": "Web development",
+      "mobile": "Mobile apps",
+      "ai": "AI solutions",
+      "design": "UI/UX design",
+      "devops": "DevOps",
+      "consulting": "Consulting"
+    },
+    "legal": {
+      "privacy": "Privacy policy",
+      "terms": "Terms of service",
+      "cookies": "Cookie policy"
+    },
+    "copyright": "© {year} SAM IT Global. All rights reserved."
+  },
+  "buttons": {
+    "outsourcing": "Outsourcing services",
+    "education": "Education School",
+    "ai_school": "AI School",
+    "view_projects": "View projects",
+    "get_quote": "Get a quote",
+    "get_started": "Start a project",
+    "learn_more": "Back to top",
+    "send_request": "Send request",
+    "cancel": "Cancel"
+  },
+  "projects": {
+    "title": "Outsourcing Services",
+    "description": "We deliver cutting-edge technology solutions that drive business growth. From web applications to AI systems, we transform your ideas into reality.",
+    "stats": {
+      "completed": "Projects completed",
+      "satisfaction": "Client satisfaction",
+      "clients": "Happy clients"
+    },
+    "filters": {
+      "all": "All projects",
+      "web": "Web development",
+      "mobile": "Mobile apps",
+      "ai": "AI solutions",
+      "design": "UI/UX design"
+    },
+    "portfolio": {
+      "title": "Our projects",
+      "desc": "Explore our successful projects and see how we've helped businesses grow",
+      "view": "View Project",
+      "project1": {
+        "title": "E-commerce Platform",
+        "category": "Web Development",
+        "short_desc": "Modern e-commerce solution with advanced features",
+        "full_desc": "A comprehensive e-commerce platform built with React and Node.js, featuring real-time inventory management, payment processing, and analytics dashboard."
+      },
+      "project2": {
+        "title": "Food Delivery App",
+        "category": "Mobile Development",
+        "short_desc": "Cross-platform food delivery application",
+        "full_desc": "A complete food delivery ecosystem with customer app, restaurant dashboard, and delivery tracking system built with React Native."
+      },
+      "project3": {
+        "title": "AI Chatbot System",
+        "category": "AI Solutions",
+        "short_desc": "Intelligent customer service automation",
+        "full_desc": "An advanced AI chatbot system using natural language processing to automate customer support and improve user experience."
+      },
+      "project4": {
+        "title": "Banking Dashboard",
+        "category": "UI/UX Design",
+        "short_desc": "Modern banking interface design",
+        "full_desc": "A complete redesign of a banking dashboard focusing on user experience, accessibility, and modern design principles."
+      },
+      "project5": {
+        "title": "Learning Management System",
+        "category": "Web Development",
+        "short_desc": "Educational platform for online learning",
+        "full_desc": "A comprehensive LMS platform with video streaming, progress tracking, and interactive learning modules."
+      },
+      "project6": {
+        "title": "Fitness Tracking App",
+        "category": "Mobile Development",
+        "short_desc": "Personal fitness and health tracker",
+        "full_desc": "A comprehensive fitness app with workout tracking, nutrition monitoring, and social features for motivation."
+      }
+    },
+    "process": {
+      "title": "Our process",
+      "desc": "How we deliver exceptional results through our proven methodology",
+      "steps": {
+        "discovery": "Discovery & Planning",
+        "design": "Design & Prototyping",
+        "development": "Development",
+        "testing": "Testing & Launch"
+      },
+      "discovery": {
+        "desc": "We analyze your requirements and create a detailed project roadmap",
+        "detail1": "Requirements gathering",
+        "detail2": "Technical analysis",
+        "detail3": "Project timeline",
+        "detail4": "Resource allocation"
+      },
+      "design": {
+        "desc": "Creating user-centered designs and interactive prototypes",
+        "detail1": "UI/UX design",
+        "detail2": "Wireframing",
+        "detail3": "Prototyping",
+        "detail4": "Design review"
+      },
+      "development": {
+        "desc": "Building your solution with cutting-edge technologies",
+        "detail1": "Agile development",
+        "detail2": "Code reviews",
+        "detail3": "Testing",
+        "detail4": "Progress updates"
+      },
+      "testing": {
+        "desc": "Comprehensive testing and smooth deployment",
+        "detail1": "Quality assurance",
+        "detail2": "Performance testing",
+        "detail3": "Deployment",
+        "detail4": "Post-launch support"
+      }
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "desc": "Let's discuss your ideas and turn them into reality. Our team is ready to help you succeed."
+    },
+    "partners": {
+      "title": "Outsourcing partners",
+      "description": "The team that manages outsourcing projects, logistics, and development at SAM IT Global.",
+      "sanjar": {
+        "name": "Sanjar Saidkulov",
+        "role": "CEO & Founder",
+        "description": "Responsible for the company's overall vision, outsourcing strategy, and key partnerships.",
+        "skills": {
+          "0": "Strategy",
+          "1": "Business Management",
+          "2": "Outsourcing",
+          "3": "Leadership",
+          "4": "Partnerships"
+        }
+      },
+      "nurbekjon": {
+        "name": "Nurbekjon Akhmatov",
+        "role": "Head of Development",
+        "description": "Leads the development team, oversees solution architecture and code quality.",
+        "skills": {
+          "0": "Team Leadership",
+          "1": "Backend Development",
+          "2": "Frontend Development",
+          "3": "DevOps",
+          "4": "Cybersecurity",
+          "5": "Code Review"
+        }
+      },
+      "ibrakhim": {
+        "name": "Ibrakhim Azizov",
+        "role": "Head of Logistics / Manager",
+        "description": "Organizes logistics processes and communication between clients and the operations team.",
+        "skills": {
+          "0": "Logistics Management",
+          "1": "Operations",
+          "2": "Team Management",
+          "3": "Client Relations",
+          "4": "Process Optimization"
+        }
+      },
+      "ravshanjon": {
+        "name": "Ravshanjon Ravshanov",
+        "role": "Dispatcher",
+        "description": "Controls daily shipments, tracking, and timely delivery of goods.",
+        "skills": {
+          "0": "Dispatch",
+          "1": "Tracking",
+          "2": "Route Planning",
+          "3": "Delivery Coordination",
+          "4": "Time Management"
+        }
+      },
+      "abubakr": {
+        "name": "Abubakr Mardonkulov",
+        "role": "Logistics Department Accountant",
+        "description": "Maintains financial accounting of logistics operations and controls calculation accuracy.",
+        "skills": {
+          "0": "Accounting",
+          "1": "Financial Management",
+          "2": "Logistics Finance",
+          "3": "Bookkeeping",
+          "4": "Cost Analysis"
+        }
+      },
+      "parviz": {
+        "name": "Parviz Khaydarov",
+        "role": "Main Shift in Logistics Department",
+        "description": "Responsible for coordinating the main shift and ensuring SLA compliance for deliveries.",
+        "skills": {
+          "0": "Shift Management",
+          "1": "Team Leadership",
+          "2": "SLA Compliance",
+          "3": "Operations",
+          "4": "Quality Control"
+        }
+      },
+      "samir": {
+        "name": "Samir",
+        "role": "Updater in Logistics Department",
+        "description": "Updates shipment statuses and ensures information transparency for clients.",
+        "skills": {
+          "0": "Status Updates",
+          "1": "Data Entry",
+          "2": "Client Communication",
+          "3": "Information Management",
+          "4": "Tracking Systems"
+        }
+      },
+      "farzona": {
+        "name": "Farzona Farkhodova",
+        "role": "Backend Developer",
+        "description": "Develops and maintains the server-side of outsourcing projects.",
+        "skills": {
+          "0": "Backend Development",
+          "1": "Node.js",
+          "2": "REST APIs",
+          "3": "Database Design",
+          "4": "Server Architecture",
+          "5": "API Integration"
+        }
+      },
+      "shokhjakhon": {
+        "name": "Shokhjakhon Sirojev",
+        "role": "Full Stack Developer",
+        "description": "Responsible for the full development cycle: from interface to server logic.",
+        "skills": {
+          "0": "Full Stack Development",
+          "1": "Vue.js",
+          "2": "Node.js",
+          "3": "Frontend",
+          "4": "Backend",
+          "5": "Database"
+        }
+      }
+    },
+    "modal": {
+      "get_quote": "Get a quote",
+      "project_type": "Project type *",
+      "select_project_type": "Select project type",
+      "budget": "Budget range *",
+      "select_budget": "Select budget range",
+      "name": "Your name *",
+      "email": "Email *",
+      "description": "Project description *",
+      "placeholder_name": "Jane Smith",
+      "placeholder_email": "name{'@'}example.com",
+      "placeholder_desc": "A booking app for a small clinic, with online payments",
+      "cancel": "Cancel",
+      "send": "Send request",
+      "sending": "Sending…",
+      "success": "Request sent. We'll contact you soon.",
+      "error": "Couldn't send your request. Check your connection and try again.",
+      "budget_small": "Small projects and MVPs",
+      "budget_medium": "Medium complexity projects",
+      "budget_large": "Large scale applications",
+      "budget_enterprise": "Enterprise solutions",
+      "category": "Category",
+      "duration": "Duration",
+      "team_size": "Team size",
+      "technologies": "Technologies used"
+    },
+    "features": {
+      "responsive": "Responsive Design",
+      "seo": "SEO Optimization",
+      "fast": "Fast Performance",
+      "secure": "Secure Architecture",
+      "ios_android": "iOS & Android",
+      "react_native": "React Native",
+      "flutter": "Flutter",
+      "app_store": "App Store Deployment",
+      "machine_learning": "Machine Learning",
+      "data_analysis": "Data Analysis",
+      "predictive": "Predictive Models",
+      "automation": "Automation",
+      "user_research": "User Research",
+      "wireframing": "Wireframing",
+      "prototyping": "Prototyping",
+      "design_systems": "Design Systems"
+    }
+  },
+  "school": {
+    "courses_title": "Our courses",
+    "courses": {
+      "1": {
+        "title": "UI/UX Design Mastery",
+        "category": "Design",
+        "desc": "Learn to create stunning user interfaces and exceptional user experiences. Master Figma, Adobe XD, and design thinking principles.",
+        "level": "Beginner",
+        "students": "1,250 students",
+        "rating": "4.9 (324 reviews)"
+      },
+      "2": {
+        "title": "AI & Machine Learning",
+        "category": "AI/ML",
+        "desc": "Build intelligent systems and neural networks. Master Python, TensorFlow, and deep learning algorithms.",
+        "level": "Advanced",
+        "students": "890 students",
+        "rating": "4.7 (412 reviews)"
+      },
+      "3": {
+        "title": "Full Stack Web Development",
+        "category": "Development",
+        "desc": "Master modern web technologies including React, Node.js, and cloud deployment.",
+        "level": "Intermediate",
+        "students": "2,100 students",
+        "rating": "4.9 (735 reviews)"
+      },
+      "4": {
+        "title": "Mobile App Development",
+        "category": "Mobile",
+        "desc": "Create native iOS and Android apps using React Native and Flutter frameworks.",
+        "level": "Intermediate",
+        "students": "1,560 students",
+        "rating": "4.8 (389 reviews)"
+      },
+      "5": {
+        "title": "Data Science & Analytics",
+        "category": "Data Science",
+        "desc": "Master data analysis, visualization, and statistical modeling. Work with Python, R, SQL, and advanced analytics tools to extract insights from complex datasets.",
+        "level": "Advanced",
+        "students": "1,890 students",
+        "rating": "4.8 (567 reviews)"
+      },
+      "6": {
+        "title": "Cybersecurity Specialist",
+        "category": "Security",
+        "desc": "Protect digital assets with advanced security protocols and ethical hacking techniques.",
+        "level": "Advanced",
+        "students": "920 students",
+        "rating": "4.9 (264 reviews)"
+      },
+      "7": {
+        "title": "Game Development",
+        "category": "Gaming",
+        "desc": "Create immersive games using Unity, Unreal Engine, and modern game design principles.",
+        "level": "Intermediate",
+        "students": "1,340 students",
+        "rating": "4.7 (318 reviews)"
+      },
+      "8": {
+        "title": "Cloud Computing & DevOps",
+        "category": "Cloud",
+        "desc": "Master AWS, Azure, Docker, and Kubernetes for scalable cloud solutions.",
+        "level": "Intermediate",
+        "students": "1,120 students",
+        "rating": "4.6 (241 reviews)"
+      },
+      "enroll": "Enroll"
+    },
+    "months": "{n} month | {n} months",
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "details": "Course details"
+  },
+  "stats": {
+    "graduates": "Graduates",
+    "courses": "Courses",
+    "employment": "Employment"
+  },
+  "process": {
+    "discovery": "Discovery & Planning",
+    "design": "Design & Prototyping",
+    "development": "Development",
+    "testing": "Testing & Launch"
+  },
+  "filters": {
+    "all": "All Projects",
+    "web": "Web Development",
+    "mobile": "Mobile Apps",
+    "ai": "AI Solutions",
+    "design": "UI/UX Design"
+  },
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "desc": "Let's discuss your ideas and turn them into reality. Our team is ready to help you succeed.",
+    "get_started": "Get Started",
+    "learn_more": "Learn More"
+  },
+  "education": {
+    "title_white": "SAM IT Global",
+    "title_orange": "Education",
+    "subtitle": "Where you learn not just to code — but to build the technologies of the future.",
+    "stats": {
+      "graduated": "Students graduated",
+      "job": "Got a job",
+      "studying": "Studying now"
+    },
+    "cta": {
+      "request": "Send a request",
+      "courses": "View courses"
+    },
+    "teachers": {
+      "badge": "Our Teachers",
+      "title": "Education School Team",
+      "subtitle": "Specialists who share practical experience from real SAM IT Global projects.",
+      "sanjar": {
+        "name": "Sanjar Saidkulov",
+        "role": "CEO & Founder",
+        "description": "Founder of SAM IT Global, shares experience in managing an IT company and business development strategy.",
+        "skills": {
+          "0": "Business Strategy",
+          "1": "Leadership",
+          "2": "Company Management",
+          "3": "Entrepreneurship",
+          "4": "Team Building"
+        }
+      },
+      "nurbekjon": {
+        "name": "Nurbekjon Akhmatov",
+        "role": "Cybersecurity, Frontend, Backend, DevOps Engineering Teacher",
+        "description": "Experienced developer and security expert, teaches full development cycle and system protection.",
+        "skills": {
+          "0": "Cybersecurity",
+          "1": "Frontend Development",
+          "2": "Backend Development",
+          "3": "DevOps",
+          "4": "System Architecture",
+          "5": "Code Security"
+        }
+      },
+      "izzatullo": {
+        "name": "Izzatullo Ubaydullaev",
+        "role": "UI/UX / Graphic Designer Teacher",
+        "description": "Professional designer, teaches intuitive interface design and visual communication.",
+        "skills": {
+          "0": "UI/UX Design",
+          "1": "Graphic Design",
+          "2": "User Research",
+          "3": "Prototyping",
+          "4": "Visual Design",
+          "5": "Design Systems"
+        }
+      },
+      "nemat": {
+        "name": "Nemat Tilloyev",
+        "role": "UI/UX / 3D Design Teacher",
+        "description": "3D design and user interface specialist, teaches modern visualization methods.",
+        "skills": {
+          "0": "UI/UX Design",
+          "1": "3D Design",
+          "2": "3D Modeling",
+          "3": "Visualization",
+          "4": "Interactive Design",
+          "5": "Animation"
+        }
+      },
+      "abubakr": {
+        "name": "Abubakr Mardonkulov",
+        "role": "Logistics Teacher",
+        "description": "International logistics expert, teaches supply chain management and logistics operations.",
+        "skills": {
+          "0": "International Logistics",
+          "1": "Supply Chain",
+          "2": "Operations Management",
+          "3": "Transportation",
+          "4": "Warehouse Management"
+        }
+      },
+      "ibrakhim": {
+        "name": "Ibrakhim Azizov",
+        "role": "Logistics Teacher",
+        "description": "Experienced logistics specialist, shares practical knowledge of logistics process management.",
+        "skills": {
+          "0": "Logistics Management",
+          "1": "Supply Chain",
+          "2": "Operations",
+          "3": "Process Optimization",
+          "4": "Inventory Management"
+        }
+      }
+    }
+  },
+  "about_us": {
+    "badge": "About us",
+    "title": "About Us",
+    "welcome": "Welcome to the world of",
+    "innovation": "innovation and possibilities!",
+    "description": "We create conditions for successful launch and development of your IT business — from startup to confident growth in the digital industry.",
+    "features": {
+      "1": {
+        "title": "Developer School",
+        "desc": "Practical classes with experienced mentors, mastering modern technologies, creating original projects."
+      },
+      "2": {
+        "title": "Professional Tools",
+        "desc": "Wide range of technologies, frameworks, libraries and tools from verified developers."
+      },
+      "3": {
+        "title": "Comfortable Environment",
+        "desc": "Only from verified instructors — experience you can rely on in learning."
+      }
+    },
+    "stats": {
+      "1": "Trained Developers",
+      "2": "Launched Projects"
+    }
+  },
+  "home": {
+    "eyebrow": "IT outsourcing · Education · AI",
+    "tech_badge": "Tech stack",
+    "tech_title": "Technologies we build with",
+    "tech_text": "From interfaces to neural networks — one team covers the whole product cycle.",
+    "dir_badge": "What we do",
+    "dir_title": "Three ways to work with us",
+    "outsourcing": {
+      "title": "Outsourcing",
+      "text": "Web, mobile and AI products built by a senior team — from idea to launch.",
+      "cta": "View projects"
+    },
+    "education": {
+      "title": "Education",
+      "text": "Practical IT courses with working developers. Learn by shipping real projects.",
+      "cta": "Explore courses"
+    },
+    "ai": {
+      "title": "AI School",
+      "text": "Machine learning, data and generative AI for the next generation of engineers.",
+      "cta": "Open AI School"
+    },
+    "cta_title": "Have an idea? Let's build it.",
+    "cta_text": "Tell us about your product or pick a course — we reply within one working day.",
+    "cta_button": "Write on Telegram",
+    "stack_label": "Stack"
+  },
+  "a11y": {
+    "skip": "Skip to main content",
+    "main_nav": "Main navigation",
+    "call": "Call us",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "lang": "Language",
+    "close": "Close",
+    "pause": "Pause scrolling",
+    "play": "Resume scrolling",
+    "select_course": "Choose a course",
+    "subscribe_email": "Your email for the newsletter"
+  },
+  "enroll": {
+    "title": "Enroll in a course",
+    "name": "Your name *",
+    "name_placeholder": "Jane Smith",
+    "phone": "Phone number *",
+    "phone_placeholder": "+998 90 123 45 67",
+    "course": "Course *",
+    "select_course": "Choose a course",
+    "comment": "Questions",
+    "comment_placeholder": "For example: are there evening groups?",
+    "cancel": "Cancel",
+    "submit": "Enroll",
+    "sending": "Sending…",
+    "success": "Request sent. We'll contact you soon.",
+    "error": "Couldn't send your request. Check your connection and try again."
+  }
+}

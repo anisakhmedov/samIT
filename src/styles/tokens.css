@@ -1,0 +1,150 @@
+/* Дизайн-токены. Тёмная технологичная тема + фирменный оранжевый */
+:root {
+  --bg: #07080d;
+  --bg-raised: #0d0f16;
+  --surface: #11141d;
+  --surface-hover: #161a25;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.16);
+  /* Граница интерактивных полей: не менее 3:1 к фону и заливке (WCAG 1.4.11) */
+  --control-border: #737b8e;
+
+  --text: #f4f5f7;
+  --text-muted: #9aa3b2;
+
+  /* Акцент бренда: RGB-каналы — единственный источник, остальное строится от них */
+  --brand-rgb: 249 113 3;
+  --brand-soft-rgb: 255 154 61;
+  --brand: rgb(var(--brand-rgb));
+  --brand-soft: rgb(var(--brand-soft-rgb));
+  --brand-tint: #fed7aa;
+  --brand-glow: rgb(var(--brand-rgb) / 0.35);
+
+  /* Праймитивы вторичных оттенков */
+  --cyan: #22d3ee;
+  --violet: #8b5cf6;
+
+  /* Роли (в компонентах используем их, а не праймитивы) */
+  --focus-ring: var(--cyan);
+  --success: #7ee787;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+/* Общие кнопки новой темы */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text);
+  transition-property: transform, background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn-primary-new {
+  background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+  color: #0b0b0f;
+  box-shadow: 0 8px 28px -8px var(--brand-glow);
+}
+.btn-ghost {
+  background: rgb(255 255 255 / 0.04);
+  border-color: var(--line-strong);
+}
+@media (hover: hover) {
+  .btn-primary-new:hover {
+    box-shadow: 0 12px 36px -6px var(--brand-glow);
+  }
+  .btn-ghost:hover {
+    background: rgb(255 255 255 / 0.09);
+    border-color: rgb(255 255 255 / 0.3);
+  }
+}
+.btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Один фон страницы: за пределами контента (bounce-прокрутка, скроллбар) белого не видно */
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  overscroll-behavior: none;
+  /* фиксированная шапка 70px: якоря и фокус не прячутся под ней */
+  scroll-padding-top: 70px;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Доступность ---------- */
+/* Единое кольцо фокуса для клавиатуры (WCAG 2.4.7, 1.4.11: контраст с фоном выше 3:1) */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* «Перейти к содержимому» — первый фокусируемый элемент страницы */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 3000;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #0b0b0f;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* Основной контент получает фокус программно при смене страницы, кольцо не нужно */
+main:focus {
+  outline: none;
+}
+
+/* Пользователь просит меньше движения: гасим анимации и переходы (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
