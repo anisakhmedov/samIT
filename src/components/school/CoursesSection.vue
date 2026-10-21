@@ -2,7 +2,10 @@
 import { ref } from 'vue'
 import CourseModal from './CourseModal.vue'
 import { courses } from '@/data/courses'
+import { useMediaQuery } from '@/composables/useMediaQuery'
 
+// На телефоне сетка — горизонтальная лента; делаем её доступной с клавиатуры
+const narrow = useMediaQuery('(max-width: 480px)')
 const showModal = ref(false)
 const selectedCourse = ref('')
 
@@ -15,7 +18,12 @@ const onError = (message) => alert(message)
 </script>
 
 <template>
-  <div class="grid-container">
+  <div
+    class="grid-container"
+    :role="narrow ? 'region' : undefined"
+    :aria-label="narrow ? $t('school.courses_title') : undefined"
+    :tabindex="narrow ? 0 : undefined"
+  >
     <article
       v-for="course in courses"
       :key="course.id"
@@ -98,7 +106,7 @@ const onError = (message) => alert(message)
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 20px;
-  margin-top: 48px;
+  margin-top: clamp(24px, 5vw, 48px);
 }
 
 .course {
@@ -318,6 +326,61 @@ const onError = (message) => alert(message)
 @media (max-width: 719px) {
   .body {
     padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .grid-container {
+    gap: 14px;
+  }
+  .media {
+    height: 150px;
+  }
+  .category {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 0.68rem;
+  }
+  .body {
+    gap: 8px;
+    padding: 16px;
+  }
+  .title {
+    font-size: 1.15rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+  }
+  .meta {
+    gap: 6px 14px;
+    font-size: 0.8rem;
+  }
+  .foot {
+    padding-top: 12px;
+  }
+  .price {
+    font-size: 1.05rem;
+  }
+}
+/* ---------- Телефон: длинный список — горизонтальная лента ---------- */
+@media (max-width: 480px) {
+  .grid-container {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(var(--page-gutter) / -2);
+    padding: 2px calc(var(--page-gutter) / 2) 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--page-gutter) / 2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .course {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
   }
 }
 </style>

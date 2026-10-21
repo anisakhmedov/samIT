@@ -32,7 +32,7 @@ const lines = [
   ],
   [
     { t: '  const ', c: 'k' },
-    { t: 'design = ', c: 'p' },
+    { t: 'ui = ', c: 'p' },
     { t: 'await ', c: 'k' },
     { t: 'team.', c: 'p' },
     { t: 'design', c: 'f' },
@@ -40,17 +40,17 @@ const lines = [
   ],
   [
     { t: '  const ', c: 'k' },
-    { t: 'product = ', c: 'p' },
+    { t: 'app = ', c: 'p' },
     { t: 'await ', c: 'k' },
     { t: 'team.', c: 'p' },
     { t: 'develop', c: 'f' },
-    { t: '(design)', c: 'p' },
+    { t: '(ui)', c: 'p' },
   ],
   [
     { t: '  return ', c: 'k' },
     { t: 'team.', c: 'p' },
     { t: 'launch', c: 'f' },
-    { t: '(product)', c: 'p' },
+    { t: '(app)', c: 'p' },
   ],
   [{ t: '}', c: 'p' }],
 ]
@@ -156,7 +156,8 @@ onBeforeUnmount(() => clearInterval(timer))
 .code {
   margin: 0;
   padding: 20px 22px;
-  min-height: 318px;
+  /* высота под все 11 строк заранее, чтобы набор текста не сдвигал страницу */
+  min-height: calc(11 * 1.75em + 40px);
   font-family: var(--font-mono);
   font-size: 0.88rem;
   line-height: 1.75;
@@ -229,6 +230,35 @@ onBeforeUnmount(() => clearInterval(timer))
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .titlebar {
+    padding: 10px 14px;
+  }
+  .light {
+    width: 10px;
+    height: 10px;
+  }
+  .code {
+    min-height: calc(11 * 1.6em + 28px);
+    padding: 14px;
+    font-size: 0.74rem;
+    line-height: 1.6;
+  }
+  .num {
+    width: 1.5ch;
+    margin-right: 12px;
+  }
+  .status {
+    padding: 9px 14px;
+    font-size: 0.72rem;
+  }
+}
+@media (max-width: 400px) {
+  .num {
+    display: none;
   }
 }
 </style>

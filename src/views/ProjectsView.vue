@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDialog } from '@/composables/useDialog'
+import { useMediaQuery } from '@/composables/useMediaQuery'
 import { handleListboxKeys } from '@/composables/listboxKeys'
 import TechBand from '@/components/ui/TechBand.vue'
 import { partners } from '@/data/people'
@@ -18,6 +19,8 @@ const submitting = ref(false)
 const typeOpen = ref(false)
 const budgetOpen = ref(false)
 const form = ref(emptyForm())
+// На телефоне списки превращаются в ленты: делаем их доступными с клавиатуры (WCAG 2.1.1)
+const narrow = useMediaQuery('(max-width: 480px)')
 const quoteDialog = ref(null)
 const projectDialog = ref(null)
 
@@ -174,7 +177,12 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
           <h2 class="section-title">{{ $t('services.title') }} <span>{{ $t('services.subtitle') }}</span></h2>
           <p class="section-description">{{ $t('services.description') }}</p>
         </div>
-        <div class="services-grid">
+        <div
+          class="services-grid"
+          :role="narrow ? 'region' : undefined"
+          :aria-label="narrow ? $t('services.title') + ' ' + $t('services.subtitle') : undefined"
+          :tabindex="narrow ? 0 : undefined"
+        >
           <div v-for="(service, i) in services" :key="service.id" class="service-card" :style="{ animationDelay: `${i * 0.1}s` }">
             <div class="service-icon"><div class="icon-wrapper" v-html="service.icon"></div></div>
             <h3 class="service-title">{{ $t(service.titleKey) }}</h3>
@@ -201,7 +209,12 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
           <h2 class="section-title">{{ $t('projects.partners.title') }}</h2>
           <p class="section-description">{{ $t('projects.partners.description') }}</p>
         </div>
-        <div class="partners-grid">
+        <div
+          class="partners-grid"
+          :role="narrow ? 'region' : undefined"
+          :aria-label="narrow ? $t('projects.partners.title') : undefined"
+          :tabindex="narrow ? 0 : undefined"
+        >
           <div v-for="partner in partners" :key="partner.nameKey" class="partner-card">
             <div class="partner-image">
               <img :src="partner.photo" :alt="$t(partner.nameKey)" />
@@ -244,7 +257,12 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
             {{ $t(`projects.filters.${filter}`) }}
           </button>
         </div>
-        <div class="projects-grid">
+        <div
+          class="projects-grid"
+          :role="narrow ? 'region' : undefined"
+          :aria-label="narrow ? $t('projects.portfolio.title') : undefined"
+          :tabindex="narrow ? 0 : undefined"
+        >
           <div v-for="project in filteredProjects" :key="project.id" class="project-card" @click="openProject(project)">
             <div class="project-image">
               <img :src="project.image" :alt="$t(project.titleKey)" />
@@ -278,7 +296,12 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
           <h2 class="section-title">{{ $t('projects.process.title') }}</h2>
           <p class="section-description">{{ $t('projects.process.desc') }}</p>
         </div>
-        <div class="process-timeline">
+        <div
+          class="process-timeline"
+          :role="narrow ? 'region' : undefined"
+          :aria-label="narrow ? $t('projects.process.title') : undefined"
+          :tabindex="narrow ? 0 : undefined"
+        >
           <div v-for="(step, i) in processSteps" :key="step.id" class="process-step">
             <div class="step-number">{{ i + 1 }}</div>
             <div class="step-content">
@@ -542,7 +565,7 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
   color: var(--text);
 }
 .container {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   max-width: none;
   margin-inline: auto;
   padding: 0;
@@ -646,7 +669,7 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
 .hero-title {
   margin: 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-size: clamp(1.9rem, 8.5vw, 5rem);
   font-weight: 700;
   line-height: 1.04;
   letter-spacing: -0.02em;
@@ -708,7 +731,7 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
 .portfolio-section,
 .process-section,
 .cta-section {
-  padding: 110px 0;
+  padding: clamp(48px, 9vw, 110px) 0;
   border-top: 1px solid var(--line);
 }
 .partners-section {
@@ -721,7 +744,7 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
 .section-title {
   margin: 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.2vw, 3.2rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -1213,6 +1236,166 @@ onBeforeUnmount(() => document.removeEventListener('click', closeSelects))
   }
   .stat-label {
     font-size: 0.78rem;
+  }
+}
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: auto;
+    padding: 88px 0 40px;
+  }
+  .hero-description {
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .hero-stats {
+    margin-top: 22px;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .hero-actions {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    flex: 1 1 100%;
+  }
+  .section-header {
+    margin-bottom: 26px;
+  }
+  .section-description {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  .services-grid,
+  .partners-grid,
+  .projects-grid,
+  .process-timeline {
+    gap: 14px;
+  }
+  .service-card {
+    gap: 10px;
+    padding: 20px;
+  }
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .service-title {
+    font-size: 1.15rem;
+  }
+  .partner-image {
+    aspect-ratio: 4 / 3.2;
+  }
+  .partner-info,
+  .project-info {
+    gap: 8px;
+    padding: 16px;
+  }
+  .partner-title,
+  .project-title {
+    font-size: 1.1rem;
+  }
+  .project-image {
+    height: 160px;
+  }
+  .project-filters {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .process-step {
+    gap: 10px;
+    padding: 20px;
+  }
+  .step-number {
+    width: 38px;
+    height: 38px;
+  }
+  .step-title {
+    font-size: 1.1rem;
+  }
+  .step-details {
+    margin-top: 12px;
+  }
+  .cta-content {
+    gap: 18px;
+    padding: 24px 20px;
+  }
+  .cta-actions {
+    width: 100%;
+    gap: 10px;
+  }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary {
+    flex: 1 1 100%;
+  }
+  .project-modal-image {
+    height: 180px;
+  }
+  .project-modal-header {
+    padding: 16px 20px;
+  }
+  .project-modal-info {
+    gap: 16px;
+    padding: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .service-card,
+  .process-step {
+    padding: 16px;
+  }
+  .stat-item {
+    padding: 12px 10px;
+  }
+}
+/* ---------- Телефон: длинный список — горизонтальная лента ---------- */
+@media (max-width: 480px) {
+  .partners-grid,
+  .projects-grid {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(var(--page-gutter) / -2);
+    padding: 2px calc(var(--page-gutter) / 2) 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--page-gutter) / 2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .partner-card,
+  .project-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+}
+/* ---------- Телефон: услуги и этапы — горизонтальные ленты ---------- */
+@media (max-width: 480px) {
+  .services-grid,
+  .process-timeline {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(var(--page-gutter) / -2);
+    padding: 2px calc(var(--page-gutter) / 2) 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--page-gutter) / 2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .service-card,
+  .process-step {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
   }
 }
 </style>

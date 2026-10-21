@@ -105,4 +105,30 @@ defineProps({
   outline: 1px solid oklch(1 0 0 / 0.1);
   outline-offset: -1px;
 }
+@media (max-width: 480px) {
+  .about-card {
+    min-height: 0;
+  }
+  .card-content {
+    gap: 8px;
+    padding: 18px;
+    padding-right: 64px;
+  }
+  .card-title {
+    font-size: 1.15rem;
+  }
+  .card-description {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .card-image {
+    margin: 6px -46px 0 0;
+  }
+  .image {
+    height: 130px;
+  }
+  .icon-container {
+    min-width: 48px;
+  }
+}
 </style>

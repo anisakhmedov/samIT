@@ -373,7 +373,7 @@ button.dropdown-item {
   }
 }
 
-/* iOS не зумит поля, если шрифт не меньше 16px */
+/* iOS не зумит поля, если шрифт не меньше 16px; на телефоне модалки компактнее */
 @media (max-width: 640px) {
   .form-input,
   .form-textarea,
@@ -381,9 +381,40 @@ button.dropdown-item {
     font-size: 1rem;
   }
   .modal-header {
-    padding: 20px 20px 0;
+    padding: 18px 18px 0;
+  }
+  .modal-title {
+    font-size: 1.3rem;
   }
   .modal-form {
-    padding: 20px;
+    gap: 14px;
+    padding: 16px 18px 18px;
+  }
+  .form-input,
+  .form-textarea,
+  .custom-select {
+    padding: 11px 14px;
+  }
+  .form-textarea {
+    min-height: 88px;
+  }
+  .form-actions {
+    gap: 10px;
+  }
+  .cancel-button,
+  .submit-button {
+    flex: 1;
+    padding: 12px 16px;
+  }
+}
+@media (max-width: 360px) {
+  .modal-overlay {
+    padding: 8px;
+  }
+  .modal-header {
+    padding: 14px 14px 0;
+  }
+  .modal-form {
+    padding: 14px;
   }
 }

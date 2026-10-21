@@ -17,13 +17,13 @@ import TechMarquee from './TechMarquee.vue'
 .tech-band {
   display: flex;
   flex-direction: column;
-  gap: 44px;
-  padding: 90px 0;
+  gap: clamp(24px, 5vw, 44px);
+  padding: clamp(48px, 9vw, 90px) 0;
   background: var(--bg);
   color: var(--text);
 }
 .head {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   margin-inline: auto;
 }
 .badge {
@@ -42,7 +42,7 @@ h2 {
   margin: 18px 0 0;
   max-width: 40rem;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -52,5 +52,14 @@ p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-muted);
+}
+@media (max-width: 480px) {
+  h2 {
+    margin-top: 12px;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
 }
 </style>

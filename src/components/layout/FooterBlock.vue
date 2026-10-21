@@ -525,4 +525,77 @@ const legal = ['privacy', 'terms', 'cookies']
     padding: 24px 16px;
   }
 }
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 36px 16px 0;
+  }
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    margin-bottom: 24px;
+  }
+  .company-info,
+  .footer-content > .footer-section:last-child {
+    grid-column: 1 / -1;
+  }
+  .logo-container {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .footer-logo {
+    width: 40px;
+  }
+  .company-description {
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  .section-title {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+  }
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  .footer-link {
+    font-size: 0.9rem;
+  }
+  .contact-item {
+    gap: 12px;
+  }
+  .contact-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .newsletter-section {
+    padding: 18px;
+    margin-bottom: 24px;
+  }
+  .newsletter-content {
+    gap: 14px;
+  }
+  .newsletter-text h4 {
+    font-size: 1.15rem;
+  }
+  .newsletter-text p {
+    font-size: 0.9rem;
+  }
+  .footer-bottom {
+    gap: 10px;
+    padding: 16px 0;
+  }
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+  }
+}
 </style>

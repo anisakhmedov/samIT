@@ -32,13 +32,14 @@ const paused = ref(false)
 
 <style scoped>
 .marquee-wrap {
+  --marquee-gap: 16px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 .marquee {
   display: grid;
-  gap: 16px;
+  gap: var(--marquee-gap);
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
@@ -48,7 +49,7 @@ const paused = ref(false)
 }
 .track {
   display: flex;
-  gap: 16px;
+  gap: var(--marquee-gap);
   width: max-content;
   margin: 0;
   padding: 0;
@@ -135,15 +136,34 @@ const paused = ref(false)
 
 @keyframes scroll-left {
   to {
-    transform: translateX(calc(-50% - 8px));
+    transform: translateX(calc(-50% - var(--marquee-gap) / 2));
   }
 }
 @keyframes scroll-right {
   from {
-    transform: translateX(calc(-50% - 8px));
+    transform: translateX(calc(-50% - var(--marquee-gap) / 2));
   }
   to {
     transform: translateX(0);
+  }
+}
+@media (max-width: 480px) {
+  .marquee-wrap {
+    --marquee-gap: 10px;
+    gap: 14px;
+  }
+  .chip {
+    gap: 8px;
+    padding: 9px 14px;
+    font-size: 0.9rem;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  .pause {
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 }
 </style>

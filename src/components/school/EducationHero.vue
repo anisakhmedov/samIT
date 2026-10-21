@@ -150,7 +150,7 @@ onMounted(() => {
   width: 100%;
 }
 .container {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   max-width: none;
   margin-inline: auto;
   padding: 0;
@@ -164,7 +164,7 @@ onMounted(() => {
 .main-title {
   margin: 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-size: clamp(1.9rem, 8.5vw, 5rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
 }
@@ -279,6 +279,32 @@ onMounted(() => {
   }
   .stat-label {
     font-size: 0.78rem;
+  }
+}
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .school-hero {
+    min-height: auto;
+    padding: 88px 0 40px;
+  }
+  .subtitle {
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .stats-grid {
+    margin-top: 22px;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .cta-buttons {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-secondary {
+    flex: 1 1 100%;
   }
 }
 </style>

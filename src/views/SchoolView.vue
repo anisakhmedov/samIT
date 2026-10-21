@@ -28,18 +28,18 @@ import MapSection from '@/components/school/MapSection.vue'
 
 <style scoped>
 .cousesFont {
-  padding: 110px 0;
+  padding: clamp(48px, 9vw, 110px) 0;
   border-top: 1px solid var(--line);
   background: var(--bg-raised);
   color: var(--text);
 }
 .sectionTeacher {
-  padding: 110px 0;
+  padding: clamp(48px, 9vw, 110px) 0;
   border-top: 1px solid var(--line);
   background: var(--bg-raised);
 }
 .map-block {
-  padding: 80px 0 110px;
+  padding: clamp(40px, 7vw, 80px) 0 clamp(48px, 9vw, 110px);
   border-top: 1px solid var(--line);
   background: var(--bg);
 }
@@ -47,19 +47,19 @@ import MapSection from '@/components/school/MapSection.vue'
   max-width: none;
 }
 .courses-inner {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   margin-inline: auto;
 }
 .courses-title {
   margin: 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.2vw, 3.2rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text);
 }
 .map-inner {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   margin-inline: auto;
 }
 @media (max-width: 640px) {

@@ -108,7 +108,7 @@ onMounted(() => {
 <style scoped>
 .about-us-section {
   position: relative;
-  padding: 110px 0;
+  padding: clamp(48px, 9vw, 110px) 0;
   border-top: 1px solid var(--line);
   background: var(--bg);
   color: var(--text);
@@ -117,7 +117,7 @@ onMounted(() => {
 .container {
   position: relative;
   z-index: 1;
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   max-width: none;
   margin-inline: auto;
   padding: 0;
@@ -143,7 +143,7 @@ onMounted(() => {
 .section-title {
   margin: 18px 0 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.2vw, 3.2rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -314,6 +314,61 @@ onMounted(() => {
   }
   .stats-container {
     grid-template-columns: 1fr;
+  }
+}
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    margin-top: 12px;
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  .section-description {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  .content-grid {
+    gap: 24px;
+  }
+  .features-column {
+    gap: 14px;
+  }
+  .visual-column {
+    gap: 14px;
+  }
+  .school-photos {
+    gap: 10px;
+  }
+  .photo-main {
+    height: 200px;
+  }
+  .play-button {
+    width: 52px;
+    height: 52px;
+  }
+  .additional-photos {
+    gap: 8px;
+  }
+  .photo-secondary {
+    height: 80px;
+  }
+  .stats-container {
+    gap: 10px;
+  }
+  .stat-card {
+    gap: 12px;
+    padding: 14px;
+  }
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .stat-number {
+    font-size: 1.5rem;
   }
 }
 </style>

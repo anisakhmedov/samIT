@@ -141,7 +141,7 @@ const stats = [
   color: var(--text);
 }
 .shell {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   margin-inline: auto;
 }
 
@@ -233,7 +233,7 @@ const stats = [
 .title {
   margin: 22px 0 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 9vw, 5.6rem);
+  font-size: clamp(1.75rem, 9vw, 5.6rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
 }
@@ -306,10 +306,10 @@ const stats = [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 56px;
+  gap: clamp(28px, 5vw, 56px);
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 110px 0 80px;
+  padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 7vw, 80px);
   border-top: 1px solid var(--line);
 }
 .section-head {
@@ -334,7 +334,7 @@ const stats = [
 .section-head h2 {
   margin: 18px 0 0;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.2vw, 3.2rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -486,7 +486,7 @@ const stats = [
   margin: 0;
   max-width: 28rem;
   font-family: gilroyB, Exo, sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-size: clamp(1.7rem, 4.5vw, 3.4rem);
   line-height: 1.1;
 }
 .cta-panel p {
@@ -539,6 +539,91 @@ const stats = [
     opacity: 0;
     filter: blur(4px);
     transform: translateY(12px);
+  }
+}
+/* ---------- Телефон: компактнее ---------- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 84px 0 40px;
+  }
+  .hero-grid {
+    gap: 28px;
+  }
+  .eyebrow {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  .title {
+    margin-top: 16px;
+  }
+  .subtitle {
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .actions {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .actions .btn {
+    flex: 1 1 100%;
+  }
+  .section-head {
+    margin-bottom: 28px;
+  }
+  .section-head p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  .badge {
+    padding: 5px 12px;
+    font-size: 0.72rem;
+  }
+  .section-head h2 {
+    margin-top: 12px;
+  }
+  .cards {
+    gap: 14px;
+  }
+  .card {
+    gap: 10px;
+    padding: 20px;
+  }
+  .card h3 {
+    font-size: 1.35rem;
+  }
+  .tags {
+    margin-top: 2px;
+  }
+  .stats {
+    gap: 12px;
+  }
+  .stat {
+    gap: 6px;
+  }
+  .stat-value {
+    font-size: clamp(1.9rem, 9vw, 4.4rem);
+  }
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  .cta-panel {
+    gap: 12px;
+    padding: 24px 20px;
+  }
+  .cta-panel p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 76px;
+  }
+  .card {
+    padding: 16px;
+  }
+  .cta-panel {
+    padding: 20px 16px;
   }
 }
 </style>

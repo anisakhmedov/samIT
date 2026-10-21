@@ -1,5 +1,9 @@
 <script setup>
 import { teachers } from '@/data/people'
+import { useMediaQuery } from '@/composables/useMediaQuery'
+
+// На телефоне список — горизонтальная лента, делаем её доступной с клавиатуры
+const narrow = useMediaQuery('(max-width: 480px)')
 </script>
 
 <template>
@@ -11,7 +15,12 @@ import { teachers } from '@/data/people'
         <p class="subtitle">{{ $t('education.teachers.subtitle') }}</p>
       </div>
 
-      <div class="teachers-grid">
+      <div
+        class="teachers-grid"
+        :role="narrow ? 'region' : undefined"
+        :aria-label="narrow ? $t('education.teachers.title') : undefined"
+        :tabindex="narrow ? 0 : undefined"
+      >
         <div v-for="teacher in teachers" :key="teacher.nameKey" class="teacher-card">
           <div class="teacher-image">
             <img :src="teacher.photo" :alt="$t(teacher.nameKey)" />
@@ -41,7 +50,7 @@ import { teachers } from '@/data/people'
   color: var(--text);
 }
 .container {
-  width: min(1200px, 100% - 48px);
+  width: min(1200px, 100% - var(--page-gutter));
   max-width: none;
   margin-inline: auto;
 }
@@ -181,6 +190,50 @@ import { teachers } from '@/data/people'
   }
   .teacher-card:hover img {
     transform: scale(1.04);
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 26px;
+  }
+  .title {
+    margin-top: 12px;
+  }
+  .subtitle {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  .teachers-grid {
+    gap: 14px;
+  }
+  .teacher-image {
+    aspect-ratio: 4 / 3.2;
+  }
+  .teacher-info {
+    gap: 8px;
+    padding: 16px;
+  }
+  .teacher-title {
+    font-size: 1.1rem;
+  }
+}
+/* ---------- Телефон: длинный список — горизонтальная лента ---------- */
+@media (max-width: 480px) {
+  .teachers-grid {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(var(--page-gutter) / -2);
+    padding: 2px calc(var(--page-gutter) / 2) 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--page-gutter) / 2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+  .teacher-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
   }
 }
 </style>
