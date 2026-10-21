@@ -12,79 +12,54 @@ defineProps({
 </script>
 
 <template>
-  <div class="about-card">
-    <svg width="100%" height="100%" preserveAspectRatio="none" class="card-background" viewBox="0 0 670 370" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        class="card-border"
-        d="M670 350C670 361.046 661.046 370 650 370H20C8.95429 370 0 361.046 0 350V20C0 8.95432 8.95431 0 20 0H567C578.046 0 587 8.95431 587 20V63C587 74.0457 595.954 83 607 83H650C661.046 83 670 91.9543 670 103V350Z"
-        fill="white"
-      />
-    </svg>
-    <div class="icon-container">
-      <div class="icon-background">
-        <slot name="icon"><AboutIcon name="graduation" /></slot>
-      </div>
+  <article class="about-card">
+    <!-- Иконка лежит внутри карточки, в правом верхнем углу -->
+    <div class="icon-badge" aria-hidden="true">
+      <slot name="icon"><AboutIcon name="graduation" /></slot>
     </div>
-    <div class="card-content">
-      <h4 class="card-title">{{ title }}</h4>
-      <p class="card-description">{{ description }}</p>
-      <div class="card-image"><img :src="imageSrc" :alt="title" class="image" /></div>
-    </div>
-  </div>
+
+    <h4 class="card-title">{{ title }}</h4>
+    <p class="card-description">{{ description }}</p>
+    <div class="card-image"><img :src="imageSrc" alt="" class="image" /></div>
+  </article>
 </template>
 
 <style scoped>
 .about-card {
   position: relative;
-  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface), var(--bg-raised));
+  border: 1px solid var(--line);
   color: var(--text);
 }
-/* Контур карточки с «вырезом» под иконку: заливка и обводка в тёмной теме */
-.card-background {
+.icon-badge {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.card-border {
-  fill: var(--surface);
-  stroke: var(--line-strong);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-}
-.icon-container {
-  position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12%;
-  min-width: 56px;
-  aspect-ratio: 1;
-}
-.icon-background {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 52px;
+  height: 52px;
   border-radius: 16px;
   background: linear-gradient(135deg, var(--brand), var(--brand-soft));
   color: #0b0b0f;
   box-shadow: 0 8px 24px -8px var(--brand-glow);
 }
-.card-content {
-  position: relative;
-  display: grid;
-  gap: 12px;
-  padding: 28px;
-  padding-right: 18%;
-}
 .card-title {
   margin: 0;
+  /* место под иконку, чтобы заголовок не заезжал на неё */
+  padding-right: 64px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
   font-family: gilroyB, Exo, sans-serif;
   font-size: 1.35rem;
+  line-height: 1.25;
   color: var(--text);
 }
 .card-description {
@@ -93,7 +68,7 @@ defineProps({
   color: var(--text-muted);
 }
 .card-image {
-  margin: 8px -18% 0 0;
+  margin-top: 6px;
   overflow: hidden;
   border-radius: 14px;
 }
@@ -105,30 +80,30 @@ defineProps({
   outline: 1px solid oklch(1 0 0 / 0.1);
   outline-offset: -1px;
 }
+
 @media (max-width: 480px) {
   .about-card {
-    min-height: 0;
-  }
-  .card-content {
     gap: 8px;
     padding: 18px;
-    padding-right: 64px;
+  }
+  .icon-badge {
+    top: 16px;
+    right: 16px;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
   }
   .card-title {
+    padding-right: 56px;
+    min-height: 46px;
     font-size: 1.15rem;
   }
   .card-description {
     font-size: 0.92rem;
     line-height: 1.5;
   }
-  .card-image {
-    margin: 6px -46px 0 0;
-  }
   .image {
     height: 130px;
-  }
-  .icon-container {
-    min-width: 48px;
   }
 }
 </style>
